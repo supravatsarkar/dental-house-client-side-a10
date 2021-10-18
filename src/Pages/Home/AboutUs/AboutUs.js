@@ -3,7 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import about from '../../../images/about.jpg';
 const AboutUs = () => {
     return (
-        <div className="my-5 py-5 bg-light">
+        <div className="my-5 py-5 bg-light" id="about-us">
             <Container className="">
                 <h1 className="mb-3 fw-bolder">You are always safe with us , we are ready to help any time.</h1>
                 <Row xs={1} md={2} className="g-5 align-items-center">

@@ -1,4 +1,7 @@
 .home-container{
-    min-height: 200vh;
+    /* min-height: 200vh; */
     /* background-color:antiquewhite; */
+}
+.custom-min-height{
+    min-height: 90vh;
 }

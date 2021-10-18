@@ -4,7 +4,7 @@ import './Contact.css';
 
 const ContactUs = () => {
     return (
-        <div className=" contact-section text-white">
+        <div className=" contact-section text-white" id="contact">
             <div className="contact-container py-5">
                 <Container>
 

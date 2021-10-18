@@ -6,12 +6,11 @@ import Services from '../Services/Services/Services';
 import './Home.css';
 const Home = () => {
     return (
-        <div className="home-container">
+        <div className="custom-min-height" id="home">
             <Banner></Banner>
             <Services></Services>
             <ContactUs></ContactUs>
             <AboutUs></AboutUs>
-
         </div>
     );
 };

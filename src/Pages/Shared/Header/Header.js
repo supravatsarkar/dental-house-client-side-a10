@@ -2,9 +2,10 @@ import React from 'react';
 import { Button, Row, Col, Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../../../images/logo/png/logo.png'
 import './Header.css';
+import { HashLink } from 'react-router-hash-link';
 const Header = () => {
     return (
-        <Navbar bg="light" expand="lg" variant="light">
+        <Navbar sticky="top" bg="light" expand="lg" variant="light">
             <Container>
                 <Navbar.Brand href="#home">
                     <img
@@ -19,10 +20,11 @@ const Header = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mx-auto">
-                        <Nav.Link className="nav-button fw-bolder" href="#home">Home</Nav.Link>
-                        <Nav.Link className="nav-button fw-bolder" href="#link">Link</Nav.Link>
-                        <Nav.Link className="nav-button fw-bolder" href="#link">Link</Nav.Link>
-                        <Nav.Link className="nav-button fw-bolder" href="#link">Link</Nav.Link>
+                        <Nav.Link as={HashLink} className="nav-button fw-bolder" to="/home#home">Home</Nav.Link>
+                        <Nav.Link as={HashLink} className="nav-button fw-bolder" to="/home#services">Services</Nav.Link>
+                        <Nav.Link as={HashLink} className="nav-button fw-bolder" to="/home#contact">Contact Us</Nav.Link>
+                        <Nav.Link as={HashLink} className="nav-button fw-bolder" to="/home#about-us">About Us</Nav.Link>
+                        <Nav.Link as={HashLink} className="nav-button fw-bolder" to="/home#about-us">Log In</Nav.Link>
                     </Nav>
 
                 </Navbar.Collapse>
