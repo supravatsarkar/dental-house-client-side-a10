@@ -1,5 +1,6 @@
 .service-card{
     transition: all 1s;
+    overflow: hidden;
 }
 .card-img{
     
@@ -7,9 +8,28 @@
 }
 
 .service-card:hover {
-    transform: scale(1.1);
+    transform: scale(1);
 }
 .service-card:hover .card-img{
-    transform: rotate(10deg);
-    border:0px;
+    transform:translateY(160px) scale(.7);
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+.service-fa-icon{
+    font-size: 50px;
+    transform:translateX(550px);
+    transition: all 1s;
+    display: block;
+    margin: 0 auto;
+}
+.service-card:hover .service-fa-icon{
+    font-size: 100px;
+    transform:translateX(0px);
+    display: hidden;
+}
+.service-bottom-sec{
+    transition: all 1s;
+}
+.service-card:hover .service-bottom-sec{
+    transform:translateY(-250px);
 }
