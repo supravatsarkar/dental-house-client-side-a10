@@ -4,12 +4,12 @@
 }
 .social-icon{
     font-size: 25px;
-color: aqua;
+/* color: aqua; */
 margin-right: 20px;
 transition-duration: 2sec;
 }
 .social-icon:hover{
-    font-size: 30px;
+    color:aqua;
     cursor: pointer;
     /* transition: all; */
 }

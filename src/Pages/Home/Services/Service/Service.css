@@ -1,0 +1,15 @@
+.service-card{
+    transition: all 1s;
+}
+.card-img{
+    
+    transition: all 1s;
+}
+
+.service-card:hover {
+    transform: scale(1.1);
+}
+.service-card:hover .card-img{
+    transform: rotate(10deg);
+    border:0px;
+}
