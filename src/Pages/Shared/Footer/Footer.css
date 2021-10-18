@@ -1,0 +1,15 @@
+.social-container{
+    height: 30px;
+    /* width: 200px; */
+}
+.social-icon{
+    font-size: 25px;
+color: aqua;
+margin-right: 20px;
+transition-duration: 2sec;
+}
+.social-icon:hover{
+    font-size: 30px;
+    cursor: pointer;
+    /* transition: all; */
+}
