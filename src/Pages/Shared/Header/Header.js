@@ -3,11 +3,12 @@ import { Button, Row, Col, Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../../../images/logo/png/logo.png'
 import './Header.css';
 import { HashLink } from 'react-router-hash-link';
-import useFirebase from '../../../hooks/useFirabase';
 import userImg from '../../../images/user.png';
+import useAuth from '../../../hooks/useAuth';
 const Header = () => {
-    const { user, logOut } = useFirebase();
-    // console.log(user.photoURL);
+    const { user, logOut } = useAuth();
+
+    // try to display user photo 
     const [img, setImg] = useState('');
     useEffect(() => {
         user.photoURl ? setImg(user.photoURl) : setImg(userImg);

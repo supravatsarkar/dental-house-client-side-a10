@@ -7,34 +7,37 @@ import NotFound from './Pages/Home/NotFound/NotFound';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Register/Register';
+import ContextProvider from './context/ContextProvider';
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route path="/home">
-            <Home></Home>
-          </Route>
-          <Route exact path="/">
-            <Home></Home>
-          </Route>
-          <Route path="/service/:serviceId">
-            <ServiceDetails></ServiceDetails>
-          </Route>
-          <Route path="/register">
-            <Register></Register>
-          </Route>
-          <Route path="/login">
-            <Login></Login>
-          </Route>
-          <Route path="*">
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
-      <Footer></Footer>
+      <ContextProvider>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route path="/service/:serviceId">
+              <ServiceDetails></ServiceDetails>
+            </Route>
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
+        <Footer></Footer>
+      </ContextProvider>
     </div>
   );
 }

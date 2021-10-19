@@ -31,7 +31,7 @@ const Login = () => {
                                 <Form.Label>Password</Form.Label>
                                 <Form.Control type="password" placeholder="Password" />
                             </Form.Group>
-                            <Button className="fw-bolder" variant="danger" type="submit">
+                            <Button className="" variant="danger" type="submit">
                                 Login
                             </Button>
                             <br />
