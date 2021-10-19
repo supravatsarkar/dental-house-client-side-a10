@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useAuth from '../hooks/useAuth';
 import {
     Route,
-    Link,
     Redirect,
-    useHistory,
-    useLocation
 } from "react-router-dom";
+import { Spinner } from 'react-bootstrap';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
+    console.log('IsLoading from PrivateRoute', loading);
+
+    if (loading) {
+        return (<div className="custom-min-height">
+            <Spinner className="p-3" animation="grow" variant="danger" />
+        </div>)
+    }
+
     return (
         <Route
             {...rest}

@@ -10,7 +10,7 @@ const useFirebase = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-
+    const [loading, setLoading] = useState(true);
 
     const handleEmailField = (e) => {
         setEmail(e.target.value);
@@ -32,7 +32,7 @@ const useFirebase = () => {
             return setError('Email or Password may be empty. Please enter carefully');
         }
         return createUserWithEmailAndPassword(auth, email, password)
-            
+
     }
 
     // sign in using email and password 
@@ -69,7 +69,6 @@ const useFirebase = () => {
                 // Sign-out successful.
             }).catch((error) => {
                 console.log('Sign-out error-', error.message);
-
                 // An error happened.
             });
     }
@@ -79,12 +78,13 @@ const useFirebase = () => {
         onAuthStateChanged(auth, user => {
             if (user) {
                 setUser(user);
+                setLoading(false);
             } else {
                 setUser({});
             }
         })
     }, [])
-
+    // console.log('IsLoading from hook-', setLoading);
     return {
         signInUsingGoogle,
         logOut,
@@ -96,6 +96,7 @@ const useFirebase = () => {
         resetPassword,
         error,
         setError,
+        loading,
     }
 }
 export default useFirebase;

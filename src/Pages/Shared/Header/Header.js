@@ -7,7 +7,7 @@ import userImg from '../../../images/user.png';
 import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth();
-    console.log(user);
+
     // try to display user photo 
     const [img, setImg] = useState('');
     useEffect(() => {

@@ -11,8 +11,8 @@ import {
 } from "react-router-dom";
 
 const Login = () => {
-    const { signInUsingGoogle, error, setError, logInUsingEmailPassword, handleEmailField, handlePasswordField, resetPassword } = useAuth();
-    // console.log('from login component-', user);
+    const { signInUsingGoogle, error, setError, logInUsingEmailPassword, handleEmailField, handlePasswordField, resetPassword, loading } = useAuth();
+    console.log('from login-', loading);
     const history = useHistory();
     const location = useLocation();
     const redirect_url = location?.state?.from || '/home';
@@ -21,8 +21,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
-                alert('Sign with google success');
                 history.push(redirect_url);
+                console.log('Sign with google success');
             })
             .catch(error => {
                 setError('Error in google signIn-', error.message);

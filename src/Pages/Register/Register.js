@@ -19,8 +19,8 @@ const Register = () => {
     const handleGoogleLogin = () => {
         signInUsingGoogle()
             .then(result => {
-                alert('Sign with Google Success');
                 history.push(redirect_url);
+                console.log('Sign with Google Success');
             })
             .catch(error => {
                 setError('Error in google signIn-', error.message);
