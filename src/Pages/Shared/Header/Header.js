@@ -7,7 +7,7 @@ import userImg from '../../../images/user.png';
 import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth();
-
+    console.log(user);
     // try to display user photo 
     const [img, setImg] = useState('');
     useEffect(() => {
@@ -34,7 +34,10 @@ const Header = () => {
                         <Nav.Link as={HashLink} className="nav-button fw-bolder" smooth to="/home#contact">Contact Us</Nav.Link>
                         <Nav.Link as={HashLink} className="nav-button fw-bolder" smooth to="/home#about-us">About Us</Nav.Link>
                         {
-                            user?.email ? <></> : <Nav.Link as={HashLink} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
+
+                            (user.email || user.displayName) ? <></> : <>
+                                <Nav.Link as={HashLink} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
+                            </>
                         }
                     </Nav>
                     <Nav className="mx-auto align-items-center ">

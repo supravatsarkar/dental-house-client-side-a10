@@ -5,9 +5,43 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
+import {
+    useHistory,
+    useLocation
+} from "react-router-dom";
 
 const Register = () => {
-    const { handleEmailField, handlePasswordField, registerUsingEmailPassword, error, signInUsingGoogle } = useAuth();
+    const { handleEmailField, handlePasswordField, registerUsingEmailPassword, error, setError, signInUsingGoogle } = useAuth();
+    const history = useHistory();
+    const location = useLocation();
+    const redirect_url = location?.state?.from || '/home';
+
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                alert('Sign with Google Success');
+                history.push(redirect_url);
+            })
+            .catch(error => {
+                setError('Error in google signIn-', error.message);
+            })
+    }
+
+    const handleRegisterUsingEmailPassword = (e) => {
+        e.preventDefault();
+        registerUsingEmailPassword()
+            .then((userCredential) => {
+                // Signed in 
+                history.push(redirect_url);
+                setError('')
+                alert('Registration Successful.');
+
+            })
+            .catch((error) => {
+                // ..
+                setError(error.message);
+            });
+    }
     return (
         <Container>
             <Row className="g-5 mb-3">
@@ -15,9 +49,9 @@ const Register = () => {
                 <Col xs={9} sm={5} lg={4}>
                     <div>
                         <h4>Sign up to get started</h4>
-                        <Button onClick={signInUsingGoogle} className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
+                        <Button onClick={handleGoogleLogin} className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
                         <h5>__________ or __________</h5>
-                        <Form onSubmit={registerUsingEmailPassword}>
+                        <Form onSubmit={handleRegisterUsingEmailPassword}>
                             <Form.Group className="mb-2" controlId="formBasicEmail">
                                 <Form.Label className="text-start">Email address</Form.Label>
                                 <Form.Control onBlur={handleEmailField} type="email" placeholder="Enter email" />

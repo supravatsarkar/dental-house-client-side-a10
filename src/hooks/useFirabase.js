@@ -27,39 +27,19 @@ const useFirebase = () => {
     }
     //register using email and password
     const registerUsingEmailPassword = (e) => {
-        e.preventDefault();
+        // e.preventDefault();
         if (!(email && password)) {
             return setError('Email or Password may be empty. Please enter carefully');
         }
-        createUserWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                console.log('Sign with email and password Success');
-                setError('')
-                alert('Registration Successful.');
-
-            })
-            .catch((error) => {
-                // ..
-                console.log('Error in email and password-', error.message);
-                setError(error.message);
-            });
+        return createUserWithEmailAndPassword(auth, email, password)
+            
     }
 
     // sign in using email and password 
     const logInUsingEmailPassword = (e) => {
-        e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                // Signed in 
-                setError('');
-                console.log(userCredential.user);
-                alert('Log In Successful')
-                // ...
-            })
-            .catch((error) => {
-                setError(error.message);
-            });
+        // e.preventDefault();
+        return signInWithEmailAndPassword(auth, email, password)
+
     }
 
     //password reset email
@@ -77,14 +57,8 @@ const useFirebase = () => {
     // google sign in 
     const signInUsingGoogle = () => {
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                console.log('Sign with Google Success');
-                setUser(result.user);
-            })
-            .catch(error => {
-                console.log('Error in google signIn-', error.message);
-            })
+        return signInWithPopup(auth, googleProvider)
+
     }
 
     // Log Out
@@ -121,6 +95,7 @@ const useFirebase = () => {
         logInUsingEmailPassword,
         resetPassword,
         error,
+        setError,
     }
 }
 export default useFirebase;

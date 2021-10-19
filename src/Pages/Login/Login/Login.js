@@ -5,11 +5,47 @@ import React from 'react';
 import { Button, Container, Form, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import useFirebase from '../../../hooks/useFirabase';
+import {
+    useHistory,
+    useLocation
+} from "react-router-dom";
 
 const Login = () => {
-    const { signInUsingGoogle, error, logInUsingEmailPassword, handleEmailField, handlePasswordField, resetPassword } = useAuth();
+    const { signInUsingGoogle, error, setError, logInUsingEmailPassword, handleEmailField, handlePasswordField, resetPassword } = useAuth();
     // console.log('from login component-', user);
+    const history = useHistory();
+    const location = useLocation();
+    const redirect_url = location?.state?.from || '/home';
+
+    // handle google login 
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                alert('Sign with google success');
+                history.push(redirect_url);
+            })
+            .catch(error => {
+                setError('Error in google signIn-', error.message);
+            })
+    }
+
+    // handle email password login 
+    const handleEmailAndPasswordLogin = (e) => {
+        e.preventDefault();
+        logInUsingEmailPassword()
+            .then((userCredential) => {
+                // Signed in 
+                setError('');
+                // console.log(userCredential.user);
+                alert('Log In with email & password successful')
+                // ...
+                history.push(redirect_url);
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    }
+
     return (
         <Container>
             <Row className="g-5 mb-3">
@@ -17,9 +53,9 @@ const Login = () => {
                 <Col xs={9} sm={7} lg={4}>
                     <div>
                         <h4>Please Login</h4>
-                        <Button onClick={signInUsingGoogle} className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
+                        <Button onClick={handleGoogleLogin} className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
                         <h5>__________ or __________</h5>
-                        <Form onSubmit={logInUsingEmailPassword}>
+                        <Form onSubmit={handleEmailAndPasswordLogin}>
                             <Form.Group className="mb-2" controlId="formBasicEmail">
                                 <Form.Label className="text-start">Email address</Form.Label>
                                 <Form.Control onBlur={handleEmailField} type="email" placeholder="Enter email" />
