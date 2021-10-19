@@ -4,4 +4,5 @@
 }
 .custom-min-height{
     min-height: 90vh;
+    cursor: pointer;
 }

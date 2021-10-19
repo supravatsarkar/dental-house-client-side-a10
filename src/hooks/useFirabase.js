@@ -1,5 +1,5 @@
 import firebaseAuthentication from "../Pages/Login/FIrebase/firebase.init";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendPasswordResetEmail } from "firebase/auth";
 import { useState, useEffect } from "react";
 
 firebaseAuthentication()
@@ -16,15 +16,17 @@ const useFirebase = () => {
         setEmail(e.target.value);
     }
     const handlePasswordField = (e) => {
-
-        if (e.target.value < 6) {
-            setError('Password should be at least 6 characters');
+        const value = e.target.value;
+        if (value.length < 6) {
+            setError('Password should be at least 6 characters..');
+            console.log(e.target.value);
             return;
         }
         setPassword(e.target.value);
+        setError('');
     }
-    //sign in using email and password
-    const signInUsingEmailPassword = (e) => {
+    //register using email and password
+    const registerUsingEmailPassword = (e) => {
         e.preventDefault();
         if (!(email && password)) {
             return setError('Email or Password may be empty. Please enter carefully');
@@ -34,11 +36,40 @@ const useFirebase = () => {
                 // Signed in 
                 console.log('Sign with email and password Success');
                 setError('')
+                alert('Registration Successful.');
 
             })
             .catch((error) => {
                 // ..
                 console.log('Error in email and password-', error.message);
+                setError(error.message);
+            });
+    }
+
+    // sign in using email and password 
+    const logInUsingEmailPassword = (e) => {
+        e.preventDefault();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in 
+                setError('');
+                console.log(userCredential.user);
+                alert('Log In Successful')
+                // ...
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    }
+
+    //password reset email
+    const resetPassword = () => {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                // Password reset email sent!
+                alert('Password reset email sent!')
+            })
+            .catch((error) => {
                 setError(error.message);
             });
     }
@@ -86,7 +117,9 @@ const useFirebase = () => {
         user,
         handleEmailField,
         handlePasswordField,
-        signInUsingEmailPassword,
+        registerUsingEmailPassword,
+        logInUsingEmailPassword,
+        resetPassword,
         error,
     }
 }

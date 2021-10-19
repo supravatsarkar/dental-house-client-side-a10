@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
-    const { handleEmailField, handlePasswordField, signInUsingEmailPassword, error } = useAuth();
+    const { handleEmailField, handlePasswordField, registerUsingEmailPassword, error, signInUsingGoogle } = useAuth();
     return (
         <Container>
             <Row className="g-5 mb-3">
@@ -15,9 +15,9 @@ const Register = () => {
                 <Col xs={9} sm={5} lg={4}>
                     <div>
                         <h4>Sign up to get started</h4>
-                        <Button className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
+                        <Button onClick={signInUsingGoogle} className="fw-bolder" variant="danger"> <FontAwesomeIcon className="me-2" icon={faGoogle} />Google</Button>
                         <h5>__________ or __________</h5>
-                        <Form onSubmit={signInUsingEmailPassword}>
+                        <Form onSubmit={registerUsingEmailPassword}>
                             <Form.Group className="mb-2" controlId="formBasicEmail">
                                 <Form.Label className="text-start">Email address</Form.Label>
                                 <Form.Control onBlur={handleEmailField} type="email" placeholder="Enter email" />
