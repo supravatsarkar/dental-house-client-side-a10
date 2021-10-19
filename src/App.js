@@ -10,6 +10,7 @@ import Register from './Pages/Register/Register';
 import ContextProvider from './context/ContextProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Doctors from './Pages/Doctors/Doctors';
+import Appointment from './Pages/Appointment/Appointment';
 
 function App() {
   return (
@@ -29,6 +30,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/doctors">
               <Doctors></Doctors>
+            </PrivateRoute>
+            <PrivateRoute path="/appointment">
+              <Appointment></Appointment>
             </PrivateRoute>
             <Route path="/register">
               <Register></Register>

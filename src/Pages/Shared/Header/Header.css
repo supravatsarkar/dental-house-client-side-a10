@@ -1,10 +1,13 @@
 .nav-button{
     /* color:red; */
     /* background-color: yellow; */
-    margin-right: 10px;
-    font-size: 20px;
+    margin-right: 7px;
+    font-size: 16px;
     
 }
 .nav-bar{
     background-color: #c6f8e0;
+}
+.user-photo{
+    width: 16%;
 }

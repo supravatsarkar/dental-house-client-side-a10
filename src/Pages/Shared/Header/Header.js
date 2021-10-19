@@ -10,8 +10,10 @@ const Header = () => {
 
     // try to display user photo 
     const [img, setImg] = useState('');
+    console.log(user.photoURL);
     useEffect(() => {
-        user.photoURl ? setImg(user.photoURl) : setImg(userImg);
+
+        user.photoURL ? setImg(user.photoURL) : setImg(userImg);
     }, [])
     return (
         <Navbar className="nav-bar" sticky="top" bg="" expand="lg" variant="light">
@@ -39,10 +41,13 @@ const Header = () => {
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#about-us">About Us</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/doctors">Doctors</Nav.Link>
+                        <Nav.Link as={NavHashLink} activeClassName="selected"
+                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/appointment">Appointment</Nav.Link>
                         {
 
                             (user.email || user.displayName) ? <></> : <>
-                                <Nav.Link as={HashLink} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
+                                <Nav.Link as={NavHashLink} activeClassName="selected"
+                                    activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
                             </>
                         }
                     </Nav>
@@ -51,7 +56,7 @@ const Header = () => {
                         {
 
                             (user?.displayName || user?.email) && <>
-                                <img className="img-fluid border border-dark rounded-circle mx-1" src={img} alt=".." />
+                                <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={img} alt=".." />
                                 <span>{user?.displayName}</span>
                                 <Button onClick={logOut} variant="danger" size="sm" className="mx-1">Log Out</Button>
                             </>
