@@ -5,6 +5,8 @@ import Home from './Pages/Home/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NotFound from './Pages/Home/NotFound/NotFound';
 import ServiceDetails from './Pages/ServiceDetails/ServiceDetails';
+import Login from './Pages/Login/Login/Login';
+import Register from './Pages/Register/Register';
 
 function App() {
   return (
@@ -20,6 +22,12 @@ function App() {
           </Route>
           <Route path="/service/:serviceId">
             <ServiceDetails></ServiceDetails>
+          </Route>
+          <Route path="/register">
+            <Register></Register>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
           </Route>
           <Route path="*">
             <NotFound></NotFound>

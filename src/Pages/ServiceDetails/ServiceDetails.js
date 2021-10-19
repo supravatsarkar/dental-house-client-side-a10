@@ -21,7 +21,7 @@ const ServiceDetails = () => {
     }, [services])
 
     // const { name, img, shortDescription } = service;
-    console.log('from service details-', service);
+    // console.log('from service details-', service);
     return (
         <div className="custom-min-height">
             <Container className="bg-light my-5">
