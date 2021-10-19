@@ -9,6 +9,7 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Register/Register';
 import ContextProvider from './context/ContextProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Doctors from './Pages/Doctors/Doctors';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
             </Route>
             <PrivateRoute path="/service/:serviceId">
               <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
+            <PrivateRoute path="/doctors">
+              <Doctors></Doctors>
             </PrivateRoute>
             <Route path="/register">
               <Register></Register>

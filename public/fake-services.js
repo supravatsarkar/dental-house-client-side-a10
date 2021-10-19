@@ -7,6 +7,44 @@ https://ibb.co/g79RCbV
 https://ibb.co/bJhTjgb
 https://ibb.co/FsggdYy 
 */
+
+const doctors = [
+    {
+        name: "Dr. Sarah Johnson",
+        des: 'Dr. Sarah Johnson is a renowned dental surgeon and a certified Dental Implantologist. He is the Director our hospitals.',
+        qualification: "BDS , MDS - Plastic And Cosmetic Surgeon,",
+        specialist: "Implantologist",
+        img: "https://i.ibb.co/vJBr9GZ/doctor-5.png",
+    },
+    {
+        name: "Dr. Greg House",
+        des: "Dr. Greg House is a renowned dental surgeon and a certified Dental Implantologist. He is the Director our hospitals.",
+        qualification: "BDS , MDS - Plastic And Cosmetic Surgeon,",
+        specialist: "Prosthodontist",
+        img: "https://i.ibb.co/vJBr9GZ/doctor-5.png",
+    },
+    {
+        name: "Dr. Robert B. Moreau",
+        des: "Dr. Robert B. Moreau is a renowned dental surgeon and a certified Dental Implantologist. He is the Director our hospitals.",
+        qualification: "BDS , MDS - Plastic And Cosmetic Surgeon,",
+        specialist: "Prosthodontist",
+        img: "https://i.ibb.co/5BT9vTB/doctor-3.png",
+    },
+    {
+        name: "Evelynne Mirando",
+        des: "Dr. Evelynne Mirando is a renowned dental surgeon and a certified Dental Implantologist. He is the Director our hospitals.",
+        qualification: "BDS , MDS - Plastic And Cosmetic Surgeon,",
+        specialist: "Periodontist",
+        img: "https://i.ibb.co/RPHxZkF/doctor-2.png",
+    },
+    {
+        name: "Dr. Daryl Cornelius",
+        des: "Dr. Daryl Cornelius is a renowned dental surgeon and a certified Dental Implantologist. He is the Director our hospitals.",
+        qualification: "BDS , MDS - Plastic And Cosmetic Surgeon,",
+        specialist: "Periodontist",
+        img: "https://i.ibb.co/RPHxZkF/doctor-2.png",
+    },
+]
 const services = [
     {
         id: '1',
