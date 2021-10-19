@@ -68,7 +68,7 @@ const Appointment = () => {
                             <Form.Check type="checkbox" label="I agree to Dental House Terms Of Use and Privacy Policy" />
                         </Form.Group>
 
-                        <Button variant="success" type="submit">
+                        <Button variant="success" >
                             Submit
                         </Button>
                     </Form>

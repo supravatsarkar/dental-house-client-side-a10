@@ -32,14 +32,16 @@ const ServiceDetails = () => {
                     </Col>
                     <Col>
                         <h1>{service?.name}</h1>
-                        <p className="fs-5">{service?.shortDescription}</p>
+                        <p className="fs-6">{service?.shortDescription}</p>
                         <h2>What is {service?.name}?</h2>
-                        <p className="fs-5">{service?.extraDescription}</p>
-                        <Badge className="d-block w-25 mx-auto my-3" pill bg="info">Price:${service?.price}</Badge>
+                        <p className="fs-6">{service?.extraDescription}</p>
+                        <Badge className="d-block w-25 mx-auto my-3 fs-5 p-1" pill bg="info">Price:${service?.price}</Badge>
                         <HashLink to="/home#services">
                             <Button variant="warning" >Go Back</Button>
                         </HashLink >
-                        <Button className="ms-3" variant="success">Appointment Now</Button>
+                        <HashLink to="/appointment">
+                            <Button className="ms-3" variant="success">Appointment Now</Button>
+                        </HashLink >
                     </Col>
                 </Row>
             </Container>

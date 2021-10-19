@@ -1,3 +1,14 @@
+# Welcome to Dental House Application
+### live link: https://dental-house-assignment-10.web.app/
+### What is the feature of Dental Application
+--  It is a Dental Clinik Application. Here you can find most qualified dentist from doctor page.
+--You also get dental treatment service with price description and price from service section.
+-- Here you can click on a service details and you can see the details of service related
+-- You can appointment for tooth checkup and treatment in  the appointment page 
+-- Only After login you can access Service details, Appointment and Doctor route. It means these route are created using private route.
+-- Before logging in, you must register on registration page or Google Login
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
