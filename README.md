@@ -1,9 +1,6 @@
 repo link:-- https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-supravatsarkar
 
 live site:-- https://dental-house-assignment-10.web.app/
-
-
-
 # Welcome to Dental House Application
 ## What is Dental House?
  * Dental House is  a health care related web application . Here can appointment booking and Information see. Technology use- React, React bootstrape, google firebase for authentication and hosting. 
