@@ -1,17 +1,23 @@
+repo link:-- https://github.com/Programming-Hero-Web-Course3/healthcare-related-website-supravatsarkar
+
+live site:-- https://dental-house-assignment-10.web.app/
+
+
+
 # Welcome to Dental House Application
 ## What is Dental House?
--- Dental House is  a health care related web application . Here can appointment booking and Information see. Technology use- React, React bootstrape, google firebase for authentication and hosting. 
+ * Dental House is  a health care related web application . Here can appointment booking and Information see. Technology use- React, React bootstrape, google firebase for authentication and hosting. 
 ### Live link: https://dental-house-assignment-10.web.app/
 ### Feature of Dental House Application:
--- Here you can find most qualified dentist from doctor with details.
---You also get dental treatment service with name, description and price from service section.
--- Here you can click on a service details and you can see the details of service related
--- You can get a booking appointment form for tooth checkup and treatment from appointment page 
--- Only After login you can access Service details, Appointment and Doctor route. It means these route are created using private route.
--- Before logging in, you must register on registration page or Google Login.
--- After login you can not access login and register route.
--- After login you see user photo and name/email id.
-#### ====================Thanking You========================= 
+ * Here you can find most qualified dentist from doctor with details.
+ * You also get dental treatment service with name, description and price from service section.
+  * Here you can click on a service details and you can see the details of service related
+  * You can get a booking appointment form for tooth checkup and treatment from appointment page 
+  * Only After login you can access Service details, Appointment and Doctor route. It means these route are created using private route.
+  * Before logging in, you must register on registration page or Google Login.
+  * After login you can not access login and register route.
+  * After login you see user photo and name/email id.
+## ====================Thanking You========================= 
 
 
 # Getting Started with Create React App
