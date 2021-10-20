@@ -1,5 +1,4 @@
 import React from 'react';
-import { faGoogle, faMailchimp } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
 const Doctor = (props) => {

@@ -3,6 +3,8 @@ import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 import { HashLink } from 'react-router-hash-link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDollarSign, faFileInvoiceDollar, faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
 const ServiceDetails = () => {
@@ -36,7 +38,7 @@ const ServiceDetails = () => {
                             <p className="fs-6">{service?.shortDescription}</p>
                             <h2>What is {service?.name}?</h2>
                             <p className="fs-6">{service?.extraDescription}</p>
-                            <Badge className="d-block w-25 mx-auto my-3 fs-5 p-1" pill bg="info">Price:${service?.price}</Badge>
+                            <p className="mx-auto w-50 my-3 fw-bolder fs-5 p-2 bg-info rounded-pill text-white" > <FontAwesomeIcon className="me-2 text-white" icon={faFileInvoiceDollar} /> ${service?.price}</p>
                             <HashLink to="/home#services">
                                 <Button variant="warning" >Go Back</Button>
                             </HashLink >

@@ -16,7 +16,7 @@ const Header = () => {
     //     user.photoURL ? setImg(user.photoURL) : setImg(userImg);
     // }, [])
     return (
-        <Navbar className="nav-bar shadow bg-body" sticky="top" bg="" expand="lg" variant="">
+        <Navbar className="nav-bar shadow bg-body" sticky="top" bg="" expand="lg" variant="light">
             <Container >
                 <Navbar.Brand as={NavHashLink} smooth to="/home">
                     <img
