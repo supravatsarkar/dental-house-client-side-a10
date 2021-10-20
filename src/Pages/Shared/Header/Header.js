@@ -10,7 +10,7 @@ const Header = () => {
 
     // try to display user photo 
     const [img, setImg] = useState('');
-    console.log(user.photoURL);
+    console.log('photo url-', user.photoURL);
     useEffect(() => {
 
         user.photoURL ? setImg(user.photoURL) : setImg(userImg);

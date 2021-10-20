@@ -14,14 +14,16 @@ const Appointment = () => {
                 <h1 className="fw-bolder text-start p-3 bg-success text-white">Appointment</h1>
                 <div className="my-2">
                     <h1>Make an Appointment</h1>
-                    <p>Here you can get doctors available time & you can get your perfect visiting time to hospital.</p>
+                    {/* <p>Here you can get doctors available time & you can get your perfect visiting time to hospital.</p> */}
                     <Form cla>
                         <Row className="mb-3 fs-5">
                             <Form.Group xs={12} md={4} as={Col} controlId="formGridState">
                                 <Form.Label>Service</Form.Label>
                                 <Form.Select defaultValue="Choose...">
                                     <option>Choose Service</option>
-                                    {services.map(service => <option>{service.name} </option>)}
+                                    {services.map(service => <option
+                                        key={service.id}
+                                    >{service.name} </option>)}
                                 </Form.Select>
                             </Form.Group>
                             <Form.Group xs={12} md={4} as={Col} controlId="formGridZip">

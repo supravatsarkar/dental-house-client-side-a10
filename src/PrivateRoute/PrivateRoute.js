@@ -8,7 +8,7 @@ import { Spinner } from 'react-bootstrap';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, loading } = useAuth();
-    console.log('IsLoading from PrivateRoute', loading, user.email);
+    // console.log('IsLoading from PrivateRoute', loading, user.email);
 
     if (loading) {
         return (<div className="custom-min-height">
