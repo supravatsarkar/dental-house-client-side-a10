@@ -57,9 +57,20 @@ const Header = () => {
 
                             (user?.displayName || user?.email) ? <>
 
-                                <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={img} alt=".." />
+                                <div className="mx-2">
 
-                                <span className="d-block ">{user?.displayName}</span>
+                                    {
+                                        user?.photoURL ? <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={user.photoURL} alt=".." /> :
+                                            <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={userImg} alt=".." />
+                                    }
+
+                                    {
+                                        user?.displayName ? <span className="d-block ">{user?.displayName}</span> : <span>
+                                            <span className="d-block ">{user?.email}</span>
+                                            <small className="d-block text-danger">Name not available</small>
+                                        </span>
+                                    }
+                                </div>
                                 <div>
                                     <Button onClick={logOut} variant="danger" size="sm" className="mx-1 text-nowrap">Log Out</Button>
                                 </div>
