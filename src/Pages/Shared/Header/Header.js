@@ -43,19 +43,19 @@ const Header = () => {
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/doctors">Doctors</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/appointment">Appointment</Nav.Link>
-                        {
+                        {/* {
 
                             (user.email || user.displayName) ? <></> : <>
                                 <Nav.Link as={NavHashLink} activeClassName="selected"
                                     activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
                             </>
-                        }
+                        } */}
                     </Nav>
                     <Nav className="ms-auto d-flex align-items-center justify-content-center">
 
                         {
 
-                            (user?.displayName || user?.email) && <>
+                            (user?.displayName || user?.email) ? <>
 
                                 <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={img} alt=".." />
 
@@ -63,7 +63,11 @@ const Header = () => {
                                 <div>
                                     <Button onClick={logOut} variant="danger" size="sm" className="mx-1 text-nowrap">Log Out</Button>
                                 </div>
-                            </>
+                            </> :
+                                <>
+                                    <Nav.Link as={NavHashLink} activeClassName="selected"
+                                        activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/login"><Button variant="danger" size="sm" className="mx-1 text-nowrap">Log In</Button></Nav.Link>
+                                </>
                         }
                     </Nav>
 
