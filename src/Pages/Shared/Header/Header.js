@@ -8,15 +8,15 @@ import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logOut } = useAuth();
 
-    // try to display user photo 
-    const [img, setImg] = useState('');
-    console.log('photo url-', user.photoURL);
-    useEffect(() => {
+    // // try to display user photo 
+    // const [img, setImg] = useState('');
+    // console.log('photo url-', user.photoURL);
+    // useEffect(() => {
 
-        user.photoURL ? setImg(user.photoURL) : setImg(userImg);
-    }, [])
+    //     user.photoURL ? setImg(user.photoURL) : setImg(userImg);
+    // }, [])
     return (
-        <Navbar className="nav-bar" sticky="top" bg="" expand="lg" variant="light">
+        <Navbar className="nav-bar shadow bg-body" sticky="top" bg="" expand="lg" variant="light">
             <Container >
                 <Navbar.Brand href="#home">
                     <img
@@ -43,13 +43,6 @@ const Header = () => {
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/doctors">Doctors</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/appointment">Appointment</Nav.Link>
-                        {/* {
-
-                            (user.email || user.displayName) ? <></> : <>
-                                <Nav.Link as={NavHashLink} activeClassName="selected"
-                                    activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/login">Log In</Nav.Link>
-                            </>
-                        } */}
                     </Nav>
                     <Nav className="ms-auto d-flex align-items-center justify-content-center">
 
@@ -60,13 +53,13 @@ const Header = () => {
                                 <div className="mx-2">
 
                                     {
-                                        user?.photoURL ? <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={user.photoURL} alt=".." /> :
-                                            <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={userImg} alt=".." />
+                                        user?.photoURL ? <img className="user-photo img-fluid border border-success rounded-circle mx-1" src={user.photoURL} alt=".." /> :
+                                            <img className="user-photo img-fluid border border-success rounded-circle mx-1" src={userImg} alt=".." />
                                     }
 
                                     {
-                                        user?.displayName ? <span className="d-block ">{user?.displayName}</span> : <span>
-                                            <span className="d-block ">{user?.email}</span>
+                                        user?.displayName ? <span className="d-block text-white bg-success px-2 mt-1 rounded-pill">{user?.displayName}</span> : <span>
+                                            <span className="d-block text-white bg-success px-2 mt-1 rounded-pill">{user?.email}</span>
                                             <small className="d-block text-danger">Name not available</small>
                                         </span>
                                     }
