@@ -1,6 +1,6 @@
 # Welcome to Dental House Application
 ## What is Dental House?
-**Dental House is  a health care related web application . Here can appointment booking and Information see. Technology use- React, React bootstrape, google firebase for authentication and hosting. 
+*Dental House is  a health care related web application . Here can appointment booking and Information see. Technology use- React, React bootstrape, google firebase for authentication and hosting. 
 ### Live link: https://dental-house-assignment-10.web.app/
 ### Feature of Dental House Application:
 **Here you can find most qualified dentist from doctor with details.
