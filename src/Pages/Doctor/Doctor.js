@@ -1,5 +1,7 @@
 import React from 'react';
-
+import { faGoogle, faMailchimp } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMailBulk, faPhone } from '@fortawesome/free-solid-svg-icons';
 const Doctor = (props) => {
     const { name, img, des, qualification, specialist } = props.doctor;
     return (
@@ -15,6 +17,8 @@ const Doctor = (props) => {
                             <h4 className="card-title text-danger text-start">{name}</h4>
                             <p className="card-text text-start">{des}</p>
                             <p className="card-text fw-bolder text-start">Qualification: <small className="text-muted text-start">{qualification}</small></p>
+                            <p className="card-text text-start"><FontAwesomeIcon className="me-2 text-success" icon={faPhone} />(+91) 987-65-43210</p>
+                            <p className="card-text text-start"><FontAwesomeIcon className="me-2 text-success" icon={faMailBulk} />supportyou@dental.house.com</p>
                         </div>
                     </div>
                 </div>

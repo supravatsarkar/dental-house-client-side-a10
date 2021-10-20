@@ -16,9 +16,9 @@ const Header = () => {
     //     user.photoURL ? setImg(user.photoURL) : setImg(userImg);
     // }, [])
     return (
-        <Navbar className="nav-bar shadow bg-body" sticky="top" bg="" expand="lg" variant="light">
+        <Navbar className="nav-bar shadow bg-body" sticky="top" bg="" expand="lg" variant="">
             <Container >
-                <Navbar.Brand href="#home">
+                <Navbar.Brand as={NavHashLink} smooth to="/home">
                     <img
                         alt=""
                         src={logo}
@@ -32,17 +32,17 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto ">
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#home">Home</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/home#home">Home</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#services">Services</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/home#services">Services</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#contact">Contact Us</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/home#contact">Contact Us</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#about-us">About Us</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/home#about-us">About Us</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/doctors">Doctors</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/doctors">Doctors</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
-                            activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/appointment">Appointment</Nav.Link>
+                            activeStyle={{ color: '#198754', borderBottom: "2px solid #198754" }} className="nav-button fw-bolder" smooth to="/appointment">Appointment</Nav.Link>
                     </Nav>
                     <Nav className="ms-auto d-flex align-items-center justify-content-center">
 
@@ -53,7 +53,7 @@ const Header = () => {
                                 <div className="mx-2">
 
                                     {
-                                        user?.photoURL ? <img className="user-photo img-fluid border border-success rounded-circle mx-1" src={user.photoURL} alt=".." /> :
+                                        user?.photoURL ? <img className="user-photo img-fluid  rounded-circle mx-1" src={user.photoURL} alt=".." /> :
                                             <img className="user-photo img-fluid border border-success rounded-circle mx-1" src={userImg} alt=".." />
                                     }
 
@@ -69,8 +69,8 @@ const Header = () => {
                                 </div>
                             </> :
                                 <>
-                                    <Nav.Link as={NavHashLink} activeClassName="selected"
-                                        activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/login"><Button variant="danger" size="sm" className="mx-1 text-nowrap">Log In</Button></Nav.Link>
+                                    <Nav.Link as={NavHashLink}
+                                        className="" smooth to="/login"><Button variant="danger" size="sm" className="mx-1 text-nowrap">Log In</Button></Nav.Link>
                                 </>
                         }
                     </Nav>

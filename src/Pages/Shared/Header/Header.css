@@ -3,7 +3,15 @@
     /* background-color: yellow; */
     margin-right: 7px;
     font-size: 16px;
-    
+    transition: all 0.5s;
+    border-bottom: 2px solid white;
+    color: black;
+    /* #198754 */
+}
+.nav-button:hover{
+    color: #198754;
+    border-bottom: 2px solid #198754;
+
 }
 .nav-bar{
     /* background-color: white; */
