@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Row, Col, Navbar, Container, Nav } from 'react-bootstrap';
+import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import logo from '../../../images/logo/png/logo.png'
 import './Header.css';
-import { HashLink, NavHashLink } from 'react-router-hash-link';
+import { NavHashLink } from 'react-router-hash-link';
 import userImg from '../../../images/user.png';
 import useAuth from '../../../hooks/useAuth';
 const Header = () => {
@@ -30,7 +30,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="mx-auto">
+                    <Nav className="ms-auto ">
                         <Nav.Link as={NavHashLink} activeClassName="selected"
                             activeStyle={{ color: '#dc3545' }} className="nav-button fw-bolder" smooth to="/home#home">Home</Nav.Link>
                         <Nav.Link as={NavHashLink} activeClassName="selected"
@@ -51,14 +51,18 @@ const Header = () => {
                             </>
                         }
                     </Nav>
-                    <Nav className="mx-auto d-flex align-items-center justify-content-around">
+                    <Nav className="ms-auto d-flex align-items-center justify-content-center">
 
                         {
 
                             (user?.displayName || user?.email) && <>
+
                                 <img className="user-photo img-fluid border border-dark rounded-circle mx-1" src={img} alt=".." />
-                                <span>{user?.displayName}</span>
-                                <Button onClick={logOut} variant="danger" size="sm" className="mx-1">Log Out</Button>
+
+                                <span className="d-block ">{user?.displayName}</span>
+                                <div>
+                                    <Button onClick={logOut} variant="danger" size="sm" className="mx-1 text-nowrap">Log Out</Button>
+                                </div>
                             </>
                         }
                     </Nav>

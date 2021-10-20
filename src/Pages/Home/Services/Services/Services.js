@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Service from '../Service/Service';
-import { Container, Row, Spinner } from 'react-bootstrap';
+import { Container, Row, } from 'react-bootstrap';
 import useServices from '../../../../hooks/useServices';
 
 const Services = () => {

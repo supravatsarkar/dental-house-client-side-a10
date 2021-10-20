@@ -1,13 +1,11 @@
 import React from 'react';
 import { Container, Form, Row, Col, Button, FloatingLabel } from 'react-bootstrap';
-import { Controller, Select, Input } from 'react-hook-form';
 import useAuth from '../../hooks/useAuth';
 import useServices from '../../hooks/useServices';
 
 const Appointment = () => {
     const [services] = useServices();
     const { user } = useAuth();
-    console.log(user);
     return (
         <div className="custom-min-height">
             <Container>
@@ -38,18 +36,18 @@ const Appointment = () => {
                         <Row className="mb-3">
                             <Form.Group xs={12} md={6} as={Col} controlId="formGridEmail">
                                 <Form.Label>Name</Form.Label>
-                                <Form.Control type="text" placeholder="Patent Name" value={user.displayName} />
+                                <Form.Control type="text" placeholder="Patent Name" defaultValue={user.displayName} />
                             </Form.Group>
 
                             <Form.Group xs={12} md={6} as={Col} controlId="formGridEmail">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" placeholder="Enter email" value={user.email} />
+                                <Form.Control type="email" placeholder="Enter email" defaultValue={user.email} />
                             </Form.Group>
                         </Row>
                         <Row className="mb-3">
                             <Form.Group xs={12} md={6} as={Col} controlId="formGridZip">
                                 <Form.Label>Phone Number</Form.Label>
-                                <Form.Control type="number" placeholder="Enter Phone Number" value={user.phoneNumber} />
+                                <Form.Control type="number" placeholder="Enter Phone Number" defaultValue={user.phoneNumber} />
                             </Form.Group>
                             <Form.Group xs={12} md={6} as={Col} controlId="formGridZip">
                                 <Form.Label>Age</Form.Label>

@@ -1,4 +1,4 @@
-import { faTeeth, faToot, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
@@ -7,9 +7,9 @@ import './Service.css';
 
 const Service = (props) => {
     const { id, name, shortDescription, img } = props.service;
-    const handleClickDetails = () => {
+    // const handleClickDetails = () => {
 
-    }
+    // }
     return (
         <Col >
             <Card className="shadow service-card" >

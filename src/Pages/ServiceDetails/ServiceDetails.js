@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Badge } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 import { HashLink } from 'react-router-hash-link';
 
@@ -23,7 +23,7 @@ const ServiceDetails = () => {
     // const { name, img, shortDescription } = service;
     console.log('from service details-', service);
     return (
-        <div className="custom-min-height">
+        <div className="custom-min-height" id="service-details-container">
             <Container className="bg-light my-5">
                 {/* <h2>THis is Service Details of {serviceId}</h2> */}
                 <Row xs={1} md={2} className="g-5 align-items-center">
