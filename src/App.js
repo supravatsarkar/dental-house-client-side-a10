@@ -11,6 +11,7 @@ import ContextProvider from './context/ContextProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import Doctors from './Pages/Doctors/Doctors';
 import Appointment from './Pages/Appointment/Appointment';
+import PrivateLoginRoute from './Pages/Login/PrivateLoginRoute/PrivateLoginRoute';
 
 function App() {
   return (
@@ -34,12 +35,12 @@ function App() {
             <PrivateRoute path="/appointment">
               <Appointment></Appointment>
             </PrivateRoute>
-            <Route path="/register">
+            <PrivateLoginRoute path="/register">
               <Register></Register>
-            </Route>
-            <Route path="/login">
+            </PrivateLoginRoute>
+            <PrivateLoginRoute path="/login">
               <Login></Login>
-            </Route>
+            </PrivateLoginRoute>
             <Route path="*">
               <NotFound></NotFound>
             </Route>
